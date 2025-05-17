@@ -1,0 +1,14 @@
+name: Memocraft
+author: jstnf
+version: ${project.version}
+main: work.aemnet.Memocraft
+api-version: 1.21
+
+commands:
+  aka:
+    description: Add an alias for yourself, displayed above your NPC.
+  memo:
+    description: Leave a memo behind for others.
+  managememo:
+    description: Manage other memos.
+    permission: memocraft.admin
