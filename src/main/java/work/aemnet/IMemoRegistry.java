@@ -6,8 +6,6 @@ import org.bukkit.entity.Player;
 import java.util.UUID;
 
 public interface IMemoRegistry {
-    void initialize();
-
     void loadAndPlaceMemos(World world);
 
     /**
@@ -31,4 +29,6 @@ public interface IMemoRegistry {
      * @return true if a memo was removed, false otherwise
      */
     boolean removeMemo(UUID playerId);
+
+    void setAkaUsername(Player player, String akaUsername);
 }

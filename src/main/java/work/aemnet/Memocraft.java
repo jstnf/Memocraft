@@ -6,6 +6,7 @@ import work.aemnet.command.AkaCommand;
 import work.aemnet.command.ManagememoCommand;
 import work.aemnet.command.MemoCommand;
 import work.aemnet.data.DataSource;
+import work.aemnet.listener.JoinQuitListener;
 
 public class Memocraft extends JavaPlugin {
     private DataSource dataSource;
@@ -22,7 +23,6 @@ public class Memocraft extends JavaPlugin {
             return;
         }
         memoRegistry = new MemoRegistry(this);
-        memoRegistry.initialize();
     }
 
     @Override
@@ -37,6 +37,13 @@ public class Memocraft extends JavaPlugin {
             if (mainWorld == null) return;
             memoRegistry.loadAndPlaceMemos(mainWorld);
         }, 1L);
+
+        getServer().getPluginManager().registerEvents(new JoinQuitListener(), this);
+    }
+
+    @Override
+    public void onDisable() {
+        dataSource.onDisable();
     }
 
     public DataSource getDataSource() {

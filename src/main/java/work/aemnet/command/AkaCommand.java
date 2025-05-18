@@ -24,11 +24,6 @@ public class AkaCommand implements CommandExecutor {
             return false;
         }
 
-        if (!plugin.getMemoRegistry().hasMemo(player.getUniqueId())) {
-            player.sendMessage(Component.text("You need to send a memo before using this command. Use /memo <message> to send one."));
-            return false;
-        }
-
         String akaUsername = args[0];
 
         player.sendMessage(Component.text("You set your AKA username as: " + akaUsername));
