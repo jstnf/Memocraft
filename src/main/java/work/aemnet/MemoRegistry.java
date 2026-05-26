@@ -57,4 +57,9 @@ public class MemoRegistry implements IMemoRegistry {
     public void setAkaUsername(Player player, String akaUsername) {
 
     }
+
+    @Override
+    public void onPlayerJoin(Player player, MemoPlayer memoPlayerData) {
+
+    }
 }

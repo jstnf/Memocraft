@@ -38,7 +38,7 @@ public class Memocraft extends JavaPlugin {
             memoRegistry.loadAndPlaceMemos(mainWorld);
         }, 1L);
 
-        getServer().getPluginManager().registerEvents(new JoinQuitListener(), this);
+        getServer().getPluginManager().registerEvents(new JoinQuitListener(this), this);
     }
 
     @Override

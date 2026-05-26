@@ -2,6 +2,7 @@ package work.aemnet;
 
 import org.bukkit.World;
 import org.bukkit.entity.Player;
+import work.aemnet.data.MemoPlayer;
 
 import java.util.UUID;
 
@@ -31,4 +32,6 @@ public interface IMemoRegistry {
     boolean removeMemo(UUID playerId);
 
     void setAkaUsername(Player player, String akaUsername);
+
+    void onPlayerJoin(Player player, MemoPlayer memoPlayerData);
 }
