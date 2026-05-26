@@ -6,7 +6,6 @@ import org.bukkit.World;
 import org.bukkit.entity.Display;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.TextDisplay;
-import org.sqlite.SQLiteDataSource;
 import work.aemnet.data.Memo;
 import work.aemnet.data.MemoPlayer;
 

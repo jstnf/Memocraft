@@ -1,8 +1,11 @@
 name: Memocraft
 author: jstnf
-version: ${project.version}
+version: ${version}
 main: work.aemnet.Memocraft
 api-version: 1.21
+
+libraries:
+  - org.xerial:sqlite-jdbc:3.49.1.0
 
 commands:
   aka:
