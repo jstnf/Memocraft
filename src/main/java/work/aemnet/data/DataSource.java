@@ -1,6 +1,7 @@
 package work.aemnet.data;
 
 import com.destroystokyo.paper.profile.ProfileProperty;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 import work.aemnet.Memocraft;
@@ -10,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -91,7 +93,7 @@ public class DataSource {
     }
 
     @Nullable
-    public Memo createMemo(int playerRowId, String message, org.bukkit.Location location) {
+    public Memo createMemo(int playerRowId, String message, Location location) {
         String sql = "INSERT INTO memos (playerId, memo, x, y, z, yaw, pitch) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (var insertStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             insertStatement.setInt(1, playerRowId);
@@ -179,7 +181,7 @@ public class DataSource {
                      "p.playerId AS playerUuid, p.name, p.skinTexture, p.skinSignature, p.akaUsername " +
                      "FROM memos m JOIN players p ON m.playerId = p.id " +
                      "ORDER BY m.createdAt DESC";
-        var results = new java.util.ArrayList<MemoWithPlayer>();
+        var results = new ArrayList<MemoWithPlayer>();
         try (var statement = connection.prepareStatement(sql);
              var rs = statement.executeQuery()) {
             while (rs.next()) {
@@ -192,7 +194,7 @@ public class DataSource {
                         rs.getFloat("yaw"), rs.getFloat("pitch"));
                 MemoPlayer player = new MemoPlayer(
                         rs.getInt("playerRowId"),
-                        java.util.UUID.fromString(rs.getString("playerUuid")),
+                        UUID.fromString(rs.getString("playerUuid")),
                         rs.getString("name"),
                         rs.getString("skinTexture"),
                         rs.getString("skinSignature"),
@@ -205,7 +207,7 @@ public class DataSource {
         return results;
     }
 
-    public int getPlayerRowId(java.util.UUID playerUuid) {
+    public int getPlayerRowId(UUID playerUuid) {
         try (var statement = connection.prepareStatement("SELECT id FROM players WHERE playerId = ?")) {
             statement.setString(1, playerUuid.toString());
             try (var rs = statement.executeQuery()) {
