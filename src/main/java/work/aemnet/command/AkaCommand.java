@@ -25,7 +25,7 @@ public class AkaCommand implements CommandExecutor {
         }
 
         String akaUsername = args[0];
-
+        plugin.getMemoRegistry().setAkaUsername(player, akaUsername);
         player.sendMessage(Component.text("You set your AKA username as: " + akaUsername));
         return true;
     }

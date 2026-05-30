@@ -25,9 +25,13 @@ public class MemoCommand implements CommandExecutor {
         }
 
         String message = String.join(" ", args);
-        plugin.getMemoRegistry().addMemo(player, message);
-        player.sendMessage(Component.text("Your memo and player have been left for others. Use this command again to change your position and message."));
-        player.sendMessage(Component.text("TIP: You can also use /aka <username> to display an old username above your head."));
+        boolean previouslyHadMemo = plugin.getMemoRegistry().addMemo(player, message);
+        if (previouslyHadMemo) {
+            player.sendMessage(Component.text("Your memo has been moved here with the new message."));
+        } else {
+            player.sendMessage(Component.text("Your memo and player have been left for others. Run /memo again to move it."));
+        }
+        player.sendMessage(Component.text("TIP: /aka <name> sets a display name above your NPC."));
         return true;
     }
 }
