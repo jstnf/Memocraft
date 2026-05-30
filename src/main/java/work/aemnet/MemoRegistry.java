@@ -29,6 +29,9 @@ public class MemoRegistry implements IMemoRegistry {
 
     }
 
+    public void despawnAll() {
+    }
+
     @Override
     public boolean hasMemo(UUID playerId) {
         return false;

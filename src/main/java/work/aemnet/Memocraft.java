@@ -45,7 +45,8 @@ public class Memocraft extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        dataSource.onDisable();
+        if (memoRegistry != null) ((MemoRegistry) memoRegistry).despawnAll();
+        if (dataSource != null) dataSource.onDisable();
     }
 
     public DataSource getDataSource() {
