@@ -7,6 +7,7 @@ import work.aemnet.command.ManagememoCommand;
 import work.aemnet.command.MemoCommand;
 import work.aemnet.data.DataSource;
 import work.aemnet.listener.JoinQuitListener;
+import work.aemnet.listener.MemoInteractListener;
 
 public class Memocraft extends JavaPlugin {
     private DataSource dataSource;
@@ -39,6 +40,7 @@ public class Memocraft extends JavaPlugin {
         }, 1L);
 
         getServer().getPluginManager().registerEvents(new JoinQuitListener(this), this);
+        getServer().getPluginManager().registerEvents(new MemoInteractListener(), this);
     }
 
     @Override
