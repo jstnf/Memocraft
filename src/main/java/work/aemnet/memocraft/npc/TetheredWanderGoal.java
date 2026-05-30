@@ -8,6 +8,9 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.Random;
 
+/**
+ * Self-contained tethered random-wander state machine for any {@link Entity}.
+ */
 public final class TetheredWanderGoal {
     private static final float TETHER_RADIUS = 6.0f;
     private static final double WALK_SPEED = 0.10;

@@ -10,6 +10,11 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.jspecify.annotations.NonNull;
 
+/**
+ * In-world entity for a Memo. Subclasses {@link ServerPlayer} so it renders
+ * with a player skin but is detached from any real network client (via
+ * {@link FakeConnection}).
+ */
 public class MemoNPC extends ServerPlayer implements work.aemnet.memocraft.npc.IMemoNPC {
     private final int memoId;
     private final Vec3 origin;
