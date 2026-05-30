@@ -1,4 +1,4 @@
-package work.aemnet.data;
+package work.aemnet.memocraft.data;
 
 import java.util.UUID;
 

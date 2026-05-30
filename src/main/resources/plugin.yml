@@ -1,7 +1,7 @@
 name: Memocraft
 author: jstnf
 version: ${version}
-main: work.aemnet.Memocraft
+main: work.aemnet.memocraft.Memocraft
 api-version: 1.21
 
 libraries:

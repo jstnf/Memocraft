@@ -1,4 +1,4 @@
-package work.aemnet.npc;
+package work.aemnet.memocraft.npc;
 
 import net.minecraft.world.phys.Vec3;
 import org.bukkit.Location;

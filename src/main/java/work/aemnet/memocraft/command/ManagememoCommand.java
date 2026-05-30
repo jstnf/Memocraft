@@ -1,10 +1,10 @@
-package work.aemnet.command;
+package work.aemnet.memocraft.command;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
-import work.aemnet.Memocraft;
+import work.aemnet.memocraft.Memocraft;
 
 public class ManagememoCommand implements CommandExecutor {
     private final Memocraft plugin;

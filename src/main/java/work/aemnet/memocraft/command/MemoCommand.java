@@ -1,4 +1,4 @@
-package work.aemnet.command;
+package work.aemnet.memocraft.command;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.command.Command;
@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import work.aemnet.Memocraft;
+import work.aemnet.memocraft.Memocraft;
 
 public class MemoCommand implements CommandExecutor {
     private final Memocraft plugin;

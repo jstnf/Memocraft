@@ -1,13 +1,13 @@
-package work.aemnet;
+package work.aemnet.memocraft;
 
 import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
-import work.aemnet.command.AkaCommand;
-import work.aemnet.command.ManagememoCommand;
-import work.aemnet.command.MemoCommand;
-import work.aemnet.data.DataSource;
-import work.aemnet.listener.JoinQuitListener;
-import work.aemnet.listener.MemoInteractListener;
+import work.aemnet.memocraft.command.AkaCommand;
+import work.aemnet.memocraft.command.ManagememoCommand;
+import work.aemnet.memocraft.command.MemoCommand;
+import work.aemnet.memocraft.data.DataSource;
+import work.aemnet.memocraft.listener.JoinQuitListener;
+import work.aemnet.memocraft.listener.MemoInteractListener;
 
 public class Memocraft extends JavaPlugin {
     private DataSource dataSource;

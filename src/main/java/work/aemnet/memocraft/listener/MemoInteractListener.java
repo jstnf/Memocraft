@@ -1,4 +1,4 @@
-package work.aemnet.listener;
+package work.aemnet.memocraft.listener;
 
 import io.papermc.paper.event.player.PrePlayerAttackEntityEvent;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.jetbrains.annotations.Nullable;
-import work.aemnet.npc.IMemoNPC;
+import work.aemnet.memocraft.npc.IMemoNPC;
 
 public class MemoInteractListener implements Listener {
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)

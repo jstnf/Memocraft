@@ -1,8 +1,8 @@
-package work.aemnet;
+package work.aemnet.memocraft;
 
 import org.bukkit.World;
 import org.bukkit.entity.Player;
-import work.aemnet.data.MemoPlayer;
+import work.aemnet.memocraft.data.MemoPlayer;
 
 import java.util.UUID;
 

@@ -1,12 +1,12 @@
-package work.aemnet.listener;
+package work.aemnet.memocraft.listener;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import work.aemnet.Memocraft;
-import work.aemnet.data.MemoPlayer;
+import work.aemnet.memocraft.Memocraft;
+import work.aemnet.memocraft.data.MemoPlayer;
 
 public class JoinQuitListener implements Listener {
     private final Memocraft plugin;

@@ -1,4 +1,4 @@
-package work.aemnet;
+package work.aemnet.memocraft;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.Location;
@@ -6,8 +6,8 @@ import org.bukkit.World;
 import org.bukkit.entity.Display;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.TextDisplay;
-import work.aemnet.data.Memo;
-import work.aemnet.data.MemoPlayer;
+import work.aemnet.memocraft.data.Memo;
+import work.aemnet.memocraft.data.MemoPlayer;
 
 import java.util.HashMap;
 import java.util.Map;

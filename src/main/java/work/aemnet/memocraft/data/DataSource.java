@@ -1,10 +1,10 @@
-package work.aemnet.data;
+package work.aemnet.memocraft.data;
 
 import com.destroystokyo.paper.profile.ProfileProperty;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
-import work.aemnet.Memocraft;
+import work.aemnet.memocraft.Memocraft;
 
 import java.io.File;
 import java.sql.Connection;
