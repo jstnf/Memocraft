@@ -56,7 +56,16 @@ public final class MemoProfileManager {
                 carrier.getGameProfile().name(),
                 texture,
                 signature);
+        broadcastInitializing();
+    }
 
+    /**
+     * Sending only {@code PlayerInfoUpdate} and letting the next-tick chunk
+     * tracker deliver {@code AddEntity} leaves the body un-rendered on a live
+     * viewer's client. The remove pair is a no-op for first-time spawns; for
+     * skin refreshes it clears stale client state.
+     */
+    public void broadcastInitializing() {
         ClientboundPlayerInfoRemovePacket removeInfo =
                 new ClientboundPlayerInfoRemovePacket(List.of(carrier.getUUID()));
         ClientboundPlayerInfoUpdatePacket addInfo =
@@ -72,15 +81,6 @@ public final class MemoProfileManager {
             realPlayer.connection.send(removeEntity);
             realPlayer.connection.send(addInfo);
             realPlayer.connection.send(addEntity);
-        }
-    }
-
-    public void broadcastInitializing() {
-        ClientboundPlayerInfoUpdatePacket packet =
-                ClientboundPlayerInfoUpdatePacket.createSinglePlayerInitializing(carrier, false);
-        for (ServerPlayer realPlayer : server().getPlayerList().getPlayers()) {
-            if (realPlayer instanceof work.aemnet.memocraft.npc.IMemoNPC) continue;
-            realPlayer.connection.send(packet);
         }
     }
 
