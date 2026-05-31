@@ -39,3 +39,4 @@ versions/
 
 ### run-paper (runServer task working dir) ###
 run/
+logs/
